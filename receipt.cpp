@@ -55,10 +55,10 @@ class receipt : public eosio::contract {
 
             uint64_t primary_key()const { return id; }
 
-            EOSLIB_SERIALIZE(invoice, (DescReceita), (NumExercicio), (NumReceita), (VlPrevisto), (VlRealizado))
+            EOSLIB_SERIALIZE(invoice, (id), (institution), (DescReceita), (NumExercicio), (NumReceita), (VlPrevisto), (VlRealizado))
         };
 
-        typedef eosio::multi_index<N(invoice), invoice> invoce_index;
+        typedef eosio::multi_index<N(invoice), invoice> invoice_index;
 
         invoice_index invoices;
 }

@@ -53,6 +53,8 @@ class receipt : public eosio::contract {
             uint64_t VlPrevisto;
             uint64_t VlRealizado;
 
+            uint64_t primary_key()const { return id; }
+
             EOSLIB_SERIALIZE(invoice, (DescReceita), (NumExercicio), (NumReceita), (VlPrevisto), (VlRealizado))
         };
 
